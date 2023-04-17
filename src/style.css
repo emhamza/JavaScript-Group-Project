@@ -1,0 +1,32 @@
+.main-head {
+  margin: 3%;
+}
+
+#section-1 {
+  gap: 5%;
+}
+
+.secondary-head {
+  margin: 10%;
+}
+
+#ref-btn {
+  margin-left: 24%;
+}
+
+.my-table {
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 3%;
+  height: 45%;
+}
+
+.section-2 {
+  margin-top: 10%;
+  width: 60%;
+}
+
+#sub-btn {
+  margin-left: 82%;
+  margin-top: 5%;
+}
