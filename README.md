@@ -3,7 +3,7 @@
 <div align="center">
   <br/>
 
-  <h3><b>JavaScript Capstone Project</b></h3>
+  <h3><b>Leaderborad Project</b></h3>
 
 </div>
 
