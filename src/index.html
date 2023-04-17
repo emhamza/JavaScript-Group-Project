@@ -15,61 +15,43 @@
 </head>
 
 <body>
-  <main>
-    <h1 class="main-head">Leaderboard</h1>
-    <section>
-      <div class="d-flex">
-        <div class="col-md-6">
-          <div class="d-flex align-items-center mb-3" id="section-1">
-            <h2 class="secondary-head mr-5">Recent scores</h2>
-            <button id="ref-btn" class="btn btn-outline-secondary" type="reset">Refresh</button>
-          </div>
-          <div class="my-table">
-            <table class="table table-striped">
-              <tbody>
-                <tr>
-                  <th scope="row">Name: 30</th>
-                </tr>
-                <tr>
-                  <th scope="row">Name: 20</th>
-                </tr>
-                <tr>
-                  <th scope="row">Name: 50</th>
-                </tr>
-                <tr>
-                  <th scope="row">Name: 78</th>
-                </tr>
-                <tr>
-                  <th scope="row">Name: 125</th>
-                </tr>
-                <tr>
-                  <th scope="row">Name: 42</th>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="section-2">
-            <h2>Add your score</h2>
-            <form>
-              <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" class="form-control">
-              </div>
-              <div class="form-group">
-                <label for="score">Score:</label>
-                <input type="number" id="score" name="score" class="form-control">
-              </div>
-              <div id="message-container"></div>
-              <button type="submit" class="btn btn-outline-secondary" id="sub-btn">Submit</button>
-            </form>
-          </div>
-        </div>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled">Disabled</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
       </div>
-    </section>
-
-  </main>
+    </div>
+  </nav>
+  <footer>Exampliary contenct that we going to update later according to our theme</footer>
   <script type="module" src="index.js"></script>
 </body>
 
