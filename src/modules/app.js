@@ -2,7 +2,7 @@ const baseApiUrl = 'https://www.themealdb.com/api/json/v1/1/categories.php';
 const involvementApiUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';
 const categoriesContainer = document.querySelector('#categories');
 
-async function fetchData() {
+const fetchData = async () => {
   try {
     // Fetch categories from base API
     const response = await fetch(baseApiUrl);
@@ -67,6 +67,6 @@ async function fetchData() {
   } catch (error) {
     console.error('Error fetching categories:', error);
   }
-}
+};
 
 exports.fetchData = fetchData;
