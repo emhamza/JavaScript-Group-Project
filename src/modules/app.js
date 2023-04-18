@@ -1,13 +1,25 @@
-const apiUrl = 'https://www.themealdb.com/api/json/v1/1/categories.php';
+const baseApiUrl = 'https://www.themealdb.com/api/json/v1/1/categories.php';
+const involvementApiUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';
 const categoriesContainer = document.querySelector('#categories');
 
 async function fetchData() {
   try {
-    const response = await fetch(apiUrl);
+    // Fetch categories from base API
+    const response = await fetch(baseApiUrl);
     const data = await response.json();
     const { categories } = data;
 
-    categories.forEach((category) => {
+    // Fetch likes data from Involvement API and merge with categories
+    const likesPromises = categories.map(async (category) => {
+      const likesResponse = await fetch(`${involvementApiUrl}likes?item_id=${category.idCategory}&item_type=category`);
+      const likesData = await likesResponse.json();
+      category.likes = likesData.likes || 0;
+      return category;
+    });
+    const categoriesWithLikes = await Promise.all(likesPromises);
+
+    // Render categories with likes data
+    categoriesWithLikes.forEach((category) => {
       const categoryDiv = document.createElement('div');
       categoryDiv.className = 'category';
 
@@ -20,6 +32,12 @@ async function fetchData() {
 
       categoryDiv.appendChild(categoryImage);
       categoryDiv.appendChild(categoryTitle);
+
+      // Display number of likes for this category
+      const likesCount = document.createElement('p');
+      likesCount.className = 'likes-count';
+      likesCount.textContent = `Likes: ${category.likes}`;
+      categoryDiv.appendChild(likesCount);
 
       // Create buttons container for this category
       const buttonsContainer = document.createElement('div');
