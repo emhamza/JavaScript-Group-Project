@@ -3,7 +3,7 @@
 <div align="center">
   <br/>
 
-  <h3><b>Leaderborad Project</b></h3>
+  <h3><b>JavaScript Capstone Project</b></h3>
 
 </div>
 
@@ -28,8 +28,8 @@
 - [🙏 Acknowledgements](#acknowledgements)
 - [📝 License](#license)
 
-# 📖 [Leaderborad Project] <a name="about-project"></a>
-This project is a leaderboard that allows users to view the recent scores of different players and also add their own scores to the leaderboard. The leaderboard is displayed in a table format, with each row representing a player and their corresponding score.  
+# 📖 [JavaScript Capstone Project] <a name="about-project"></a>
+This project is a web application that uses JavaScript to fetch data from a meal API and display meal categories along with their respective images, titles, and buttons for comments and reservations. The application also uses media queries to apply responsive styling for different screen sizes, making it accessible on desktop and mobile devices.  
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -74,8 +74,6 @@ This project is a leaderboard that allows users to view the recent scores of dif
 - **[Hosted on webpack dev server]**
 
 
-
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🚀 Live Demo <a name="live-demo"></a>
@@ -102,7 +100,7 @@ Example command:
 
 ```sh
   cd my-folder
-  git clone: (https://github.com/emhamza/LeadearBoard)
+  git clone: (https://github.com/emhamza/JavaScript-Group-Project)
 ```
 
 ### Install
@@ -177,7 +175,7 @@ GitHub Pages
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the https://github.com/emhamza/LeadearBoard/issues
+Feel free to check the https://github.com/emhamza/JavaScript-Group-Project/issues
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
