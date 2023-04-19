@@ -1,31 +1,26 @@
-const { getComments, showComments, addComment } = require('./comments.js');
 import { fetchCategories, fetchLikesForCategory } from './api.js';
 import { renderCategory } from './category.js';
 
-const apiUrl = 'https://www.themealdb.com/api/json/v1/1/categories.php';
+const { getComments, showComments, addComment } = require('./comments.js');
+
 const appUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps';
 const categoriesContainer = document.querySelector('#categories');
 const commentsContainer = document.querySelector('#comments');
 
-async function fetchData() {
-  try {
-    const response = await fetch(apiUrl);
-    const data = await response.json();
-    const { categories } = data;
+export async function getAppId() {
+  const response = await fetch(appUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
 
-    categories.forEach((category) => {
-      const categoryDiv = document.createElement('div');
-      categoryDiv.className = 'category';
+  if (response.ok) {
+    localStorage.setItem('appId', JSON.stringify(await response.text()));
+  }
+}
 
-      const categoryImage = document.createElement('img');
-      categoryImage.src = category.strCategoryThumb;
-      categoryImage.alt = category.strCategory;
-
-const involvementApiUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';
-
-const categoriesContainer = document.querySelector('#categories');
-
-const fetchData = async () => {
+export const fetchData = async () => {
   try {
     await getAppId(); // Call getAppId function to get the app id before rendering the categories
 
@@ -160,18 +155,3 @@ const fetchData = async () => {
     console.error('Error fetching categories:', error);
   }
 };
-
-async function getAppId() {
-  const response = await fetch(appUrl, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
-
-  if (response.ok) {
-    localStorage.setItem('appId', JSON.stringify(await response.text()));
-  }
-}
-
-module.exports = { fetchData, getAppId };
