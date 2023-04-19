@@ -1,7 +1,8 @@
 import './style.css';
 
-const { fetchData } = require('./modules/app.js');
+import { fetchData, getAppId } from './modules/app.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   fetchData();
+  getAppId();
 });
