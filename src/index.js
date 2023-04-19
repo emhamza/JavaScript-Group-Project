@@ -1,6 +1,10 @@
 import './style.css';
 
-import { fetchData } from './modules/app.js';
+import { fetchData, getAppId } from './modules/app.js';
+
+if (!localStorage.getItem('appId')) {
+  getAppId();
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   fetchData();
