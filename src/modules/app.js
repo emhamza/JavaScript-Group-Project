@@ -1,4 +1,6 @@
 const { getComments, showComments, addComment } = require('./comments.js');
+import { fetchCategories, fetchLikesForCategory } from './api.js';
+import { renderCategory } from './category.js';
 
 const apiUrl = 'https://www.themealdb.com/api/json/v1/1/categories.php';
 const appUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps';
@@ -19,37 +21,25 @@ async function fetchData() {
       categoryImage.src = category.strCategoryThumb;
       categoryImage.alt = category.strCategory;
 
-      const categoryTitle = document.createElement('h3');
-      categoryTitle.textContent = category.strCategory;
+const involvementApiUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';
 
-      categoryDiv.appendChild(categoryImage);
-      categoryDiv.appendChild(categoryTitle);
+const categoriesContainer = document.querySelector('#categories');
 
-      // Create buttons container for this category
-      const buttonsContainer = document.createElement('div');
-      buttonsContainer.className = 'd-grid gap-2';
+const fetchData = async () => {
+  try {
+    await getAppId(); // Call getAppId function to get the app id before rendering the categories
 
-      // Create Comments button for this category
-      const commentsButton = document.createElement('button');
-      commentsButton.className = 'btn btn-outline-info';
-      commentsButton.id = 'comments-button';
-      commentsButton.textContent = 'Comments';
-      commentsButton.setAttribute('data-bs-toggle', 'modal');
-      commentsButton.setAttribute('data-bs-target', `#staticBackdrop${category.idCategory}`);
+    const categories = await fetchCategories();
 
-      // Create Reservations button for this category
-      const reservationsButton = document.createElement('button');
-      reservationsButton.className = 'btn btn-outline-info';
-      reservationsButton.id = 'reservations-button';
-      reservationsButton.textContent = 'Reservations';
+    const categoriesWithLikes = await Promise.all(
+      categories.map(async (category) => {
+        const likes = await fetchLikesForCategory(category.idCategory);
+        return { ...category, likes };
+      }),
+    );
 
-      // Append buttons to buttons container
-      buttonsContainer.appendChild(commentsButton);
-      buttonsContainer.appendChild(reservationsButton);
-
-      // Append buttons container to category div
-      categoryDiv.appendChild(buttonsContainer);
-
+    categoriesWithLikes.forEach((category) => {
+      const categoryDiv = renderCategory(category);
       categoriesContainer.appendChild(categoryDiv);
 
       // fetch comments
@@ -169,7 +159,7 @@ async function fetchData() {
   } catch (error) {
     console.error('Error fetching categories:', error);
   }
-}
+};
 
 async function getAppId() {
   const response = await fetch(appUrl, {
