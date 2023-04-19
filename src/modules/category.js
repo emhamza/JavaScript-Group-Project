@@ -1,18 +1,5 @@
 const involvementApiUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';
 
-// async function getAppId() {
-//   const response = await fetch(involvementApiUrl, {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//   });
-
-//   if (response.ok) {
-//     localStorage.setItem('appId', JSON.stringify(await response.text()));
-//   }
-// }
-
 const renderCategory = (category) => {
   const categoryDiv = document.createElement('div');
   categoryDiv.className = 'category';
