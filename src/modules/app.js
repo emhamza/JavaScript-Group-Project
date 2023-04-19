@@ -100,6 +100,7 @@ async function fetchData() {
 
       const heading2 = document.createElement('h4');
       heading2.innerHTML = 'Comments';
+      heading2.id = 'commentsHeading';
 
       const div6 = document.createElement('div');
       div6.id = `commentList${category.idCategory}`;
