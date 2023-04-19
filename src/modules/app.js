@@ -96,11 +96,11 @@ async function fetchData() {
       const para = document.createElement('p');
       para.style = 'text-align:justify';
       para.classList = 'px-3';
-      para.innerText = category.strCategoryDescription.substring(0, 301);
+      para.innerText = category.strCategoryDescription.substring(0, 206);
 
       const heading2 = document.createElement('h4');
       heading2.innerHTML = 'Comments';
-      heading2.id = 'commentsHeading';
+      heading2.id = `commentsHeading${category.idCategory}`;
 
       const div6 = document.createElement('div');
       div6.id = `commentList${category.idCategory}`;
