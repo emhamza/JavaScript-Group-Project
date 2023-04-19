@@ -63,6 +63,8 @@ const renderCategory = (category) => {
   commentsButton.className = 'btn btn-outline-info';
   commentsButton.id = 'comments-button';
   commentsButton.textContent = 'Comments';
+  commentsButton.setAttribute('data-bs-toggle', 'modal');
+  commentsButton.setAttribute('data-bs-target', `#staticBackdrop${category.idCategory}`);
 
   // Create Reservations button for this category
   const reservationsButton = document.createElement('button');
