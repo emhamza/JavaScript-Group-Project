@@ -44,7 +44,6 @@ const renderCategory = (category) => {
         },
         body: JSON.stringify({
           item_id: categoryId,
-          item_type: 'category',
         }),
       });
 
