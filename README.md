@@ -158,7 +158,12 @@ GitHub Pages
 
 - GitHub: [@emhamza](https://github.com/emhamza)
 - Twitter: [@uhamzaz](https://twitter.com/uhamzaz)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/umair-hamza-a8262b261/)
+- LinkedIn: [Umair Hamza](https://www.linkedin.com/in/umair-hamza-a8262b261/)
+
+👤 **Phone Khaing Hein**
+
+- GitHub: [@Rimuru-Tempest-26](https://github.com/Rimuru-Tempest-26)
+- LinkedIn: [Phone Khaing Hein](https://www.linkedin.com/in/phone-khaing-hein-759497216/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -167,7 +172,6 @@ GitHub Pages
 
 - [ ] **[Button JS logics]**
 - [ ] **[Desktop Responsivness]**
-- [ ] **[Drad and change the order functionality]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
