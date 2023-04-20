@@ -4,7 +4,13 @@ const mealDishesCounter = async () => {
   const response = await fetch(baseApiUrl);
   const json = await response.json();
   const { categories } = json;
-  document.getElementById('itemCount').innerText = categories.length;
+
+  const itemCountElement = document.getElementById('itemCount');
+  if (itemCountElement) {
+    itemCountElement.innerText = categories.length;
+  } else {
+    console.error('Could not find element with id "itemCount"');
+  }
 };
 
 export default mealDishesCounter;
