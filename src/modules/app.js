@@ -22,8 +22,6 @@ export async function getAppId() {
 
 export const fetchData = async () => {
   try {
-    await getAppId(); // Call getAppId function to get the app id before rendering the categories
-
     const categories = await fetchCategories();
 
     const categoriesWithLikes = await Promise.all(
@@ -117,7 +115,7 @@ export const fetchData = async () => {
       textarea.style = 'resize:none';
 
       const button2 = document.createElement('button');
-      button2.classList = 'btn btn-primary mb-3 float-end';
+      button2.classList = 'btn btn-outline-info mb-3 float-end';
       button2.innerHTML = 'Comment';
 
       div1.appendChild(div2);

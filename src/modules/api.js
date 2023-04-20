@@ -1,4 +1,4 @@
-const baseApiUrl = 'https://www.themealdb.com/api/json/v1/1/categories.php';
+export const baseApiUrl = 'https://www.themealdb.com/api/json/v1/1/categories.php';
 const involvementApiUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';
 
 export const fetchCategories = async () => {
