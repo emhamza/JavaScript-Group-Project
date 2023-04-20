@@ -1,3 +1,5 @@
+const { default: commentsCounter } = require('./counter/commentsCtr.js');
+
 const appId = JSON.parse(localStorage.getItem('appId'));
 const commentUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/comments?item_id=`;
 const addCommentUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/comments`;
@@ -14,9 +16,8 @@ const getComments = async (id) => {
 
 const showComments = (id) => {
   const commentList = document.getElementById(`commentList${id}`);
-  const commentHeadin = document.getElementById(`commentsHeading${id}`);
   const comments = JSON.parse(localStorage.getItem(`${id}comments`)) || [];
-  commentHeadin.innerText += ` (${comments.length || 0})`;
+  commentsCounter(id);
 
   if (Array.isArray(comments)) {
     comments.forEach((c) => {
@@ -64,6 +65,8 @@ const addComment = async ({ id, username, comment }) => {
     commentList.innerHTML += `
                 <p>${yyyy}-${mm}-${dd} ${username} : ${comment}</p>
             `;
+    const commentHeadin = document.getElementById(`commentsHeading${id}`);
+    commentHeadin.innerText = `Comments (${+commentHeadin.innerText.substring(10, 11) + 1})`;
   }
 };
 

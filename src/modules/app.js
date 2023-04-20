@@ -22,8 +22,6 @@ export async function getAppId() {
 
 export const fetchData = async () => {
   try {
-    await getAppId(); // Call getAppId function to get the app id before rendering the categories
-
     const categories = await fetchCategories();
 
     const categoriesWithLikes = await Promise.all(

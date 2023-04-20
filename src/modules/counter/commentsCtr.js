@@ -1,13 +1,10 @@
-const commentsCounter = (() => {
-  const countComments = () => {
-    const comments = document.querySelectorAll('.comment');
-    const counterElement = document.querySelector('#comments-counter');
-    counterElement.innerText = comments.length;
-  };
+const appId = JSON.parse(localStorage.getItem('appId'));
+const commentUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/comments?item_id=`;
 
-  return {
-    countComments,
-  };
-})();
+const commentsCounter = async (id) => {
+  const commentHeadin = document.getElementById(`commentsHeading${id}`);
+  const comments = JSON.parse(localStorage.getItem(`${id}comments`)) || [];
+  commentHeadin.innerText += ` (${comments.length || 0})`;
+};
 
 export default commentsCounter;
