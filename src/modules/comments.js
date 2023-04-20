@@ -15,9 +15,10 @@ const getComments = async (id) => {
 };
 
 const showComments = (id) => {
+  const commentHeadin = document.getElementById(`commentsHeading${id}`);
   const commentList = document.getElementById(`commentList${id}`);
-  const comments = JSON.parse(localStorage.getItem(`${id}comments`)) || [];
-  commentsCounter(id);
+  const comments = commentsCounter(id);
+  commentHeadin.innerHTML += ` (${comments.length || 0})`;
 
   if (Array.isArray(comments)) {
     comments.forEach((c) => {
