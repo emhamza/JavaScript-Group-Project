@@ -183,7 +183,7 @@ Feel free to check the https://github.com/emhamza/JavaScript-Group-Project/issue
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## ⭐️ Show your support <a name="support"></a>
+## ⭐️ Show your support <a name="support "></a>
 
 If you like this project then please follow me on Linkedin, Twitter and GitHub. Greetings!
 
