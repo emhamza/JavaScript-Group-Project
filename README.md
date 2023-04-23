@@ -38,6 +38,7 @@ This project is a web application that uses JavaScript to fetch data from a meal
 -DOM Manipulation
 -ES6
 -Webpack Loaders/bundlers
+-Uniy Testing with Jest
 
 ### Tech Stack <a name="tech-stack"></a>
 
